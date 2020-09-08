@@ -15,7 +15,6 @@ func TestAPIRoutes(t *testing.T) {
 	// cases, that should be run for testing this function
 	tests1 := []struct {
 		description string
-
 		// Test input
 		route string
 
