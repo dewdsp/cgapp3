@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/create-go-app/fiber-go-template/pkg/apiserver"
+	"github.com/dewdsp/cgapp3/backend/pkg/apiserver"
 )
 
 func main() {
