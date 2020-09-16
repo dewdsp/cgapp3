@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+import UserInput from './User/UserInput'
 
 class App extends Component {
   state = {
@@ -61,6 +62,7 @@ class App extends Component {
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}/>
+        <UserInput />
       </div>
     );
     // return React.createElement('div', { className: 'App'}, React.createElement('h1', null, 'Hi, I \'m React app.'));
