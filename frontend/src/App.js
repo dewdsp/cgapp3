@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 import UserInput from './User/UserInput'
+import UserOutput from './User/UserOutput'
 
 class App extends Component {
   state = {
@@ -10,8 +11,9 @@ class App extends Component {
       { name: 'Manu', age: 29},
       { name: 'Stephane', age: 26}
     ],
-    otherState: 'some other state'
+    userName: 'superMax'
   }
+
 
   switchNameHandler = (newName) => {
     // console.log('Was clicked');
@@ -33,6 +35,10 @@ class App extends Component {
         { name: 'Stephane', age: 27}
       ]
     })
+  }
+
+  userChangeHandler = (event) => {
+    this.setState({userName: event.target.value});
   }
 
   render() {
@@ -58,11 +64,17 @@ class App extends Component {
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age}
           click={this.switchNameHandler.bind(this,'Maxi')}
-          changed={this.nameChangedHandler} >My hobbies: Racing</Person>
+          changed={this.nameChangedHandler} >My hobbies: Reading</Person>
         <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}/>
-        <UserInput />
+        <UserInput 
+          changed={this.userChangeHandler}
+          currentName={this.state.userName} />
+        <UserOutput 
+          userName={this.state.userName} />
+        <UserOutput 
+          userName="Dew" />
       </div>
     );
     // return React.createElement('div', { className: 'App'}, React.createElement('h1', null, 'Hi, I \'m React app.'));
